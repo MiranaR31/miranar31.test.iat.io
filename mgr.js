@@ -18,8 +18,8 @@ define(['managerAPI',
         raceiat:{},
         //YBYB: change when copying back to the correct folder
         raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
+        ImmigrantLabels:ImmigrantLabels,
+        NativeLabels:NativeLabels,
         //Select randomly what attribute words to see. 
         //Based on Axt, Feng, & Bar-Anan (2021).
         posWords : API.shuffle([
