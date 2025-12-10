@@ -8,36 +8,29 @@
 		</style>
 	</head>
 	 <body>
-        <script>
-            // load MinnoJS from the CDN (you probably don't need to change this)
-            var scriptTag                = document.createElement('script');
-            scriptTag.src                = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
-            scriptTag.onload             = onLoad;
-            scriptTag.onreadystatechange = onLoad;
-            document.head.appendChild(scriptTag);
-        
-            // This function gets activated only after MinnoJS is loaded
-            function onLoad() {
-				// Create a div with class 'container' and id 'minno-app'
-				var container = document.createElement('div');
-				container.className = 'container';
+       <script>
+    // Load MinnoJS from CDN
+    const scriptTag = document.createElement('script');
+    scriptTag.src = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
+    scriptTag.onload = () => {
+        console.log("MinnoJS loaded!");
 
-				// Create the canvas object
-				var canvas = document.createElement('div');
+        // Create container div
+        const container = document.createElement('div');
+        container.className = 'container';
+        const canvas = document.createElement('div');
+        container.appendChild(canvas);
+        document.body.appendChild(container);
 
-				// Append the canvas object to the container
-				container.appendChild(canvas);
-			
-
-				// Append the container to the body
-				document.body.appendChild(container);
-                
-                // Run your study (just set the correct URL)
-                minnoJS(canvas, 'mgr.js');
-                
-                // We need to wait a few miliseconds for Qualtrics to register the value that we entered
-                minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-            }
-        </script>
+        // Make sure mgr.js exists in the same folder
+        if (typeof minnoJS === "function") {
+            minnoJS(canvas, 'mgr.js'); 
+            minnoJS.onEnd = function() { setTimeout(() => console.log("Study ended!"), 100); }
+        } else {
+            console.error("minnoJS is not defined.");
+        }
+    };
+    document.head.appendChild(scriptTag);
+</script>
     </body>
 </html>
