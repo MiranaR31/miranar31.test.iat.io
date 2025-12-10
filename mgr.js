@@ -83,7 +83,7 @@ define(['managerAPI',
     API.addSequence([
         { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
         
-        { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+        { type: 'post', path: ['$isTouch', 'raceSet', 'ImmigrantLabels', 'NativeLabels'] },
 
         // apply touch only styles
         {
