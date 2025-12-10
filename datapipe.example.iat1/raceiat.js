@@ -4,37 +4,37 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
 
     return iatExtension({
         category1 : {
-            name : global.ImmigrantLabels, //Will appear in the data.
+            name : global.blackLabels, //Will appear in the data.
             title : {
-                media : {word : global.ImmigrantLabels}, //Name of the category presented in the task.
+                media : {word : global.blackLabels}, //Name of the category presented in the task.
                 css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
                 height : 4 //Used to position the "Or" in the combined block.
             }, 
             stimulusMedia : [ //Stimuli content as PIP's media objects
-                {word: 'Youssef'},
-                {word: 'Mohamed'},
-                {word: 'Gheorghe'},
-                {word: 'Alejandro'},
-                {word: 'Li Yi'},                 
-                {word: 'Pascual'}     
+                {image: 'bm1_nc.jpg'},
+                {image: 'bm2_nc.jpg'},
+                {image: 'bm3_nc.jpg'},
+                {image: 'bf1_nc.jpg'},
+                {image: 'bf2_nc.jpg'},                 
+                {image: 'bf3_nc.jpg'}     
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
         },    
         category2 : {
-            name : global.NativeLabels, //Will appear in the data.
+            name : global.whiteLabels, //Will appear in the data.
             title : {
-                media : {word : global.NativeLabels}, //Name of the category presented in the task.
+                media : {word : global.whiteLabels}, //Name of the category presented in the task.
                 css : {color:'#31940F','font-size':'1.8em'}, //Style of the category title.
                 height : 4 //Used to position the "Or" in the combined block.
             }, 
             stimulusMedia : [ //Stimuli content as PIP's media objects
-                {word: 'Marco'},
-                {word: 'Simone'},
-                {word: 'Daniele'},
-                {word: 'Francesco'},
-                {word: 'Lorenzo'},                 
-                {word: 'Mattia'}
+                {image: 'wm1_nc.jpg'},
+                {image: 'wm2_nc.jpg'},
+                {image: 'wm3_nc.jpg'},
+                {image: 'wf1_nc.jpg'},
+                {image: 'wf2_nc.jpg'},
+                {image: 'wf3_nc.jpg'}
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
@@ -47,14 +47,14 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 height : 4 //Used to position the "Or" in the combined block.
             },
             stimulusMedia : [ //Stimuli content as PIP's media objects
-                {word: 'Disrespectful'},
-                {word: 'Slow'},
-                {word: 'Incapable'},
-                {word: 'Boisterous'},
-                {word: 'Lazy'},                 
-                {word: 'Distracted'},
-                {word: 'Demotivated'},                 
-                {word: 'Insufficient'}
+                {word: global.negWords[0]},
+                {word: global.negWords[1]},
+                {word: global.negWords[2]},
+                {word: global.negWords[3]},
+                {word: global.negWords[4]},
+                {word: global.negWords[5]},
+                {word: global.negWords[6]},
+                {word: global.negWords[7]}
             ],
             //Stimulus css
             stimulusCss : {color:'#0000FF','font-size':'2.3em'}
@@ -67,17 +67,20 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 height : 4 //Used to position the "Or" in the combined block.
             },
             stimulusMedia : [ //Stimuli content as PIP's media objects
-                {word: 'Prepared'},
-                {word: 'Intelligent'},
-                {word: 'Capable'},
-                {word: 'Studious'},
-                {word: 'Able'},                 
-                {word: 'Precise'},
-                {word: 'Willing'},                 
-                {word: 'Respectful'}
+                {word: global.posWords[0]},
+                {word: global.posWords[1]},
+                {word: global.posWords[2]},
+                {word: global.posWords[3]},
+                {word: global.posWords[4]},
+                {word: global.posWords[5]},
+                {word: global.posWords[6]},
+                {word: global.posWords[7]}
             ],
             //Stimulus css
             stimulusCss : {color:'#0000FF','font-size':'2.3em'}
+        },
+        base_url : {//Where are your images at?
+            image : global.baseURL
         },
         isTouch : global.$isTouch
     });
